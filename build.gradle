@@ -22,9 +22,13 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 
-	implementation "no.fint:fint-utdanning-model-java:3.16.0"
-	implementation "no.fint:fint-administrasjon-model-java:3.16.0"
-	implementation "no.fint:fint-arkiv-model-java:3.16.0"
+	implementation "no.fint:fint-utdanning-model-java:${apiVersion}"
+	implementation "no.fint:fint-administrasjon-model-java:${apiVersion}"
+	implementation "no.fint:fint-arkiv-model-java:${apiVersion}"
+	implementation "no.fint:fint-okonomi-model-java:${apiVersion}"
+	implementation "no.fint:fint-felles-model-java:${apiVersion}"
+	//implementation "no.fint:fint-ressurser-model-java:${apiVersion}"
+	implementation "no.fint:fint-personvern-model-java:${apiVersion}"
 
 	implementation 'org.reflections:reflections:0.10.2'
 
