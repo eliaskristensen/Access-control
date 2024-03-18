@@ -13,11 +13,24 @@ java {
 
 repositories {
 	mavenCentral()
+	maven{
+		url "https://repo.fintlabs.no/releases"
+	}
 }
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation "no.fint:fint-utdanning-model-java:3.16.0"
+	implementation "no.fint:fint-administrasjon-model-java:3.16.0"
+	implementation "no.fint:fint-arkiv-model-java:3.16.0"
+
+	implementation 'org.reflections:reflections:0.10.2'
+
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+
 	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
