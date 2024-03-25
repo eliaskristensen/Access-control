@@ -6,18 +6,21 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class User {
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String name;
     private String email;
     private String phonenumber;
+    private String role;
+    private String key;
+    private boolean value;
 
-    public User() {
+    public Client() {
     }
 
-    public User(String name, String email, String phonenumber) {
+    public Client(String name, String email, String phonenumber) {
         this.name = name;
         this.email = email;
         this.phonenumber = phonenumber;
