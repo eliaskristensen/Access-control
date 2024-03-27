@@ -20,10 +20,14 @@ public class Client {
     public Client() {
     }
 
-    public Client(String name, String email, String phonenumber) {
+    public Client(String name, String email, String phonenumber, String role, String key, boolean value) {
         this.name = name;
         this.email = email;
         this.phonenumber = phonenumber;
+        this.role = role;
+        this.key = key;
+        this.value = value;
+
     }
 
     public String getName() {
@@ -37,6 +41,15 @@ public class Client {
     public String getPhonenumber() {
         return phonenumber;
     }
+    public String getRole() {
+        return role;
+    }
+    public String getKey() {
+        return key;
+    }
+    public boolean getValue() {
+        return value;
+    }
 
     public void setName(String name) {
         this.name = name;
@@ -46,7 +59,18 @@ public class Client {
         this.email = email;
     }
 
-    public void setPhonenumber(String phonenumber) {
-        this.phonenumber = phonenumber;
+    public void setPhonenumber(String phonenumber) {this.phonenumber = phonenumber;}
+    public void setRole(String role) {
+        this.role = role;
     }
+    public void setKey(String key) {
+        this.key = key;
+    }
+    public void setValue(boolean value) {
+        this.value = value;
+    }
+
+
+
 }
+
