@@ -12,10 +12,10 @@ java {
 }
 
 repositories {
-	mavenCentral()
 	maven{
 		url "https://repo.fintlabs.no/releases"
 	}
+	mavenCentral()
 }
 
 dependencies {
@@ -29,6 +29,7 @@ dependencies {
 	implementation "no.fint:fint-felles-model-java:${apiVersion}"
 	//implementation "no.fint:fint-ressurser-model-java:${apiVersion}"
 	implementation "no.fint:fint-personvern-model-java:${apiVersion}"
+
 
 	implementation 'org.reflections:reflections:0.10.2'
 

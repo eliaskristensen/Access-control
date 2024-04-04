@@ -4,72 +4,53 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.Getter;
+import lombok.Setter;
+import no.fint.model.FintMainObject;
+import no.fint.model.FintObject;
+import org.reflections.Reflections;
+import org.springframework.context.annotation.Bean;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+@Setter
+@Getter
 @Entity
 public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String name;
-    private String email;
-    private String phonenumber;
     private String role;
     private String key;
     private boolean value;
+    private String packageName;
+
+
 
     public Client() {
     }
 
-    public Client(String name, String email, String phonenumber, String role, String key, boolean value) {
+    public Client(String name, String role, String key, boolean value) {
         this.name = name;
-        this.email = email;
-        this.phonenumber = phonenumber;
         this.role = role;
         this.key = key;
         this.value = value;
 
     }
 
-    public String getName() {
-        return name;
-    }
+    // Prøver å lage en metode som kan hente ressurser.
+    // mulig må flyttes
+    public void getFintObject(String pakke){
+        HashMap<String, Boolean> testliste = new HashMap<String, Boolean>();
+Set<Class<? extends FintMainObject>> subTypesOf = new Reflections("no.fint.model." + pakke).getSubTypesOf(FintMainObject.class);
+        subTypesOf.forEach(clazz -> {
+            testliste.put(clazz.getSimpleName(), false);
+        });
 
-    public String getEmail() {
-        return email;
     }
-
-    public String getPhonenumber() {
-        return phonenumber;
-    }
-    public String getRole() {
-        return role;
-    }
-    public String getKey() {
-        return key;
-    }
-    public boolean getValue() {
-        return value;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPhonenumber(String phonenumber) {this.phonenumber = phonenumber;}
-    public void setRole(String role) {
-        this.role = role;
-    }
-    public void setKey(String key) {
-        this.key = key;
-    }
-    public void setValue(boolean value) {
-        this.value = value;
-    }
-
 
 
 }
