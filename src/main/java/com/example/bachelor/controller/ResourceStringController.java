@@ -1,15 +1,14 @@
 package com.example.bachelor.controller;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class ResourceStringController {
-    @PostMapping("/api/resourceString")
-    public String resourceString(@RequestBody String resourceString) {
-
+    @GetMapping("/api/resourceString")
+    public ResponseEntity<String> resourceString() {
+        String resourceString = "grhsrnh";
         System.out.println("Test fra frontend: " + resourceString);
-        return resourceString;
+        return ResponseEntity.ok(resourceString + " test");
     }
 }
