@@ -1,15 +1,24 @@
 package com.example.bachelor.controller;
 
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Map;
 
 @RestController
 public class ResourceStringController {
-    @PostMapping("/api/resourceString")
-    public String resourceString(@RequestBody String resourceString) {
-
-        System.out.println("Test fra frontend: " + resourceString);
-        return resourceString;
+   // @CrossOrigin(origins = "no-corse")
+    @PostMapping ("/api/resourceString")
+    public ResponseEntity<String> resourceString(@RequestBody String test) {
+        System.out.println(test + " println");
+        //System.out.println(txt);
+        return ResponseEntity.ok(test + "Hallo");
     }
+
+
+
+
+
 }
