@@ -14,19 +14,19 @@ import static java.util.Collections.sort;
 @Service
 @Slf4j
 public class TestService {
-    @PostConstruct
-    public void test(){
-        String pakke = "felles";
-        //HashMap<String, Boolean> testliste = new HashMap<String, Boolean>();
+
+    public static HashMap<String, Boolean> test(String pakke){
+        //pakke = "arkiv";
+        HashMap<String, Boolean> testliste = new HashMap<>();
         Set<Class<? extends FintMainObject>> subTypesOf = new Reflections("no.fint.model." + pakke).getSubTypesOf(FintMainObject.class);
         subTypesOf.forEach(clazz -> {
             // Tester at vi får tak i informasjonsmodellen
-            //testliste.add(clazz.getSimpleName());
+            testliste.put(clazz.getSimpleName(),false);
             //testliste.put(clazz.getSimpleName(), false);
             //System.out.println(clazz.getSimpleName());
         });
-        //System.out.println(testliste);
         //List<FintRelation> minListe = FintObject.getAllRelations();
+        return testliste;
 
     }
 }
