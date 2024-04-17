@@ -4,12 +4,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.HashMap;
-import java.util.Map;
-
 @RestController
-public class ResourceApi {
-    @GetMapping("api/test")
+public class ResourceApiController {
+    @GetMapping("api/getComponents")
     @CrossOrigin(origins = "*")
     public String getResource(){
         System.out.println("Nå kjører getmapping");

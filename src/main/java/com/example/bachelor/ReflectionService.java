@@ -1,6 +1,5 @@
 package com.example.bachelor;
 
-import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import no.fint.model.FintMainObject;
 import org.reflections.Reflections;
@@ -13,20 +12,21 @@ import static java.util.Collections.sort;
 
 @Service
 @Slf4j
-public class TestService {
+public class ReflectionService {
 
-    public static HashMap<String, Boolean> test(String pakke){
+    public static HashMap<String, Boolean> readFintModel(String pakke){
         //pakke = "arkiv";
-        HashMap<String, Boolean> testliste = new HashMap<>();
+        HashMap<String, Boolean> fintmap = new HashMap<>();
         Set<Class<? extends FintMainObject>> subTypesOf = new Reflections("no.fint.model." + pakke).getSubTypesOf(FintMainObject.class);
         subTypesOf.forEach(clazz -> {
             // Tester at vi får tak i informasjonsmodellen
-            testliste.put(clazz.getSimpleName(),false);
-            //testliste.put(clazz.getSimpleName(), false);
-            //System.out.println(clazz.getSimpleName());
+            fintmap.put(clazz.getSimpleName(),false);
+            //fintmap.put(clazz.getSimpleName(), false);
+            System.out.println("Simplename" + clazz.getSimpleName());
+            System.out.println("Name" + clazz.getName());
         });
         //List<FintRelation> minListe = FintObject.getAllRelations();
-        return testliste;
+        return fintmap;
 
     }
 }

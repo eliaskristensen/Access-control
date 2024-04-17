@@ -1,14 +1,11 @@
 package com.example.bachelor.controller;
 
 
-import com.example.bachelor.TestService;
-import org.springframework.http.ResponseEntity;
+import com.example.bachelor.ReflectionService;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.HashMap;
-import java.util.Map;
 
 @RestController
 //@RequestMapping("api/")
@@ -23,7 +20,7 @@ public class ResourceStringController {
         String oppdelt = splitTab[1].trim().replaceAll("[\"}]", "");
 
         System.out.println(oppdelt);
-        packageMap = TestService.test(oppdelt);
+        packageMap = ReflectionService.readFintModel(oppdelt);
         System.out.println(packageMap);
         //System.out.println(txt);
         //return ResponseEntity.ok(packageMap + "Hallo");
