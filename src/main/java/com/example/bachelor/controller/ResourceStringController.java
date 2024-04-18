@@ -13,9 +13,9 @@ public class ResourceStringController {
     static HashMap<String, Boolean> packageMap;
    // @CrossOrigin(origins = "no-corse")
     @PostMapping("api/resourceString")
-    public void resourceString(@RequestBody String test) {
-        System.out.println(test + " println");
-        String[] splitTab = test.split(":");
+    public void resourceString(@RequestBody String valg) {
+        System.out.println(valg + " println");
+        String[] splitTab = valg.split(":");
 
         String oppdelt = splitTab[1].trim().replaceAll("[\"}]", "");
 
