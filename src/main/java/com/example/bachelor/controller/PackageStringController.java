@@ -11,11 +11,11 @@ import java.util.ArrayList;
 
 @RestController
 //@RequestMapping("api/")
-public class ResourceStringController {
-    //static HashMap<String, Boolean> packageMap;
-    static HashMap<String, Boolean> resourceMap;
-   // @CrossOrigin(origins = "no-corse")
-    @PostMapping("api/resourceString")
+public class PackageStringController {
+    static HashMap<String, Boolean> packageMap;
+    //static HashMap<String, Boolean> resourceMap;
+    // @CrossOrigin(origins = "no-corse")
+    @PostMapping("api/packageString")
     public void resourceString(@RequestBody String valg) {
         System.out.println(valg + " println");
         String[] splitTab = valg.split(":");
@@ -23,9 +23,9 @@ public class ResourceStringController {
         String oppdelt = splitTab[1].trim().replaceAll("[\"}]", "");
 
         System.out.println(oppdelt);
-        //packageMap = ReflectionService.readFintModel(oppdelt);
-        resourceMap = ResourceService.readRessursModel(oppdelt);
-        System.out.println(resourceMap);
+        packageMap = ReflectionService.readFintModel(oppdelt);
+        //resourceMap = ResourceService.readRessursModel(oppdelt);
+        System.out.println(packageMap);
         //System.out.println(txt);
         //return ResponseEntity.ok(packageMap + "Hallo");
     }
