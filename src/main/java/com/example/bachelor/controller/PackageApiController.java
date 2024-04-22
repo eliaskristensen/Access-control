@@ -12,7 +12,6 @@ public class PackageApiController {
         System.out.println("Nå kjører getmapping");
         String tab = PackageStringController.packageMap.toString();
         System.out.println("KOmponenter - " + PackageStringController.packageMap.toString());
-
         return "{\"message\": \"" + tab + "\"}";
         //return ResourceStringController.packageMap.toString();
     }
