@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ResourceApiController {
     @GetMapping("api/getResources")
     @CrossOrigin(origins = "*")
-    public String getResource(){
-        System.out.println("Nå kjører getmapping");
+    public String getResources(){
+        System.out.println("Nå kjører getResource");
         String tab = ResourceStringController.resourceMap.toString();
         System.out.println("Ressurser - " + ResourceStringController.resourceMap.toString());
         return "{\"message\": \"" + tab + "\"}";
