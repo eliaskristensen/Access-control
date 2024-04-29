@@ -27,22 +27,24 @@ public class Client {
     private String key;
     private boolean value;
     private String packageName;
+    private String access;
 
 
 
     public Client() {
     }
 
-    public Client(String name, String role, String key, boolean value) {
+    public Client(String name, String role, String key, boolean value, String access) {
         this.name = name;
         this.role = role;
         this.key = key;
         this.value = value;
+        this.access = access;
 
     }
 
     // Prøver å lage en metode som kan hente ressurser.
-    // mulig må flyttes
+    /*mulig må flyttes
     public void getFintObject(String pakke){
         HashMap<String, Boolean> testliste = new HashMap<String, Boolean>();
 Set<Class<? extends FintMainObject>> subTypesOf = new Reflections("no.fint.model." + pakke).getSubTypesOf(FintMainObject.class);
@@ -50,7 +52,7 @@ Set<Class<? extends FintMainObject>> subTypesOf = new Reflections("no.fint.model
             testliste.put(clazz.getSimpleName(), false);
         });
 
-    }
+    }*/
 
 
 }
