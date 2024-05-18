@@ -12,10 +12,10 @@ java {
 }
 
 repositories {
+	mavenCentral()
 	maven{
 		url "https://repo.fintlabs.no/releases"
 	}
-	mavenCentral()
 }
 
 dependencies {
@@ -30,15 +30,22 @@ dependencies {
 	//implementation "no.fint:fint-ressurser-model-java:${apiVersion}"
 	implementation "no.fint:fint-personvern-model-java:${apiVersion}"
 
-
 	implementation 'org.reflections:reflections:0.10.2'
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 
+	implementation 'org.projectlombok:lombok'
+	implementation 'org.springframework.kafka:spring-kafka'
+	implementation 'no.fintlabs:fint-kafka:3.0.0-rc-1'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-resource-server'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+
 	runtimeOnly 'org.postgresql:postgresql'
 	implementation 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+	testImplementation 'org.springframework.security:spring-security-test'
 }
 
 tasks.named('test') {

@@ -18,8 +18,7 @@ public class ResourceService {
         subTypesOf.forEach(clazz -> {
             // Tester at vi får tak i informasjonsmodellen
             ressursMap.put(clazz.getSimpleName(), false);
-            System.out.println("SIMPLENAME" + clazz.getSimpleName() + clazz.getSimpleName());
-            System.out.println("Name" + clazz.getName());
+            System.out.println("SimpleName - " + clazz.getSimpleName());
         });
         //List<FintRelation> minListe = FintObject.getAllRelations();
         return ressursMap;
