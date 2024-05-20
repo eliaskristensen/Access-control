@@ -10,7 +10,8 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long Id;
-    private String name;
+    private String fname;
+    private String lname;
     private String Mail;
     private int Phone;
     private String Access;
