@@ -5,13 +5,12 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "organizations")
+@Table(name = "Organizations")
 public class Organizations {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String orgName;
-    private String assetID;
-    private String orgNumber;
-    }//Hei
+    private String orgname;
+    private String assetid;
+    private String orgnumber;
+    }
 
 
