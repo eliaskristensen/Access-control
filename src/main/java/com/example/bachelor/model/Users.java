@@ -8,13 +8,13 @@ import lombok.Data;
 @Table(name = "Users")
 public class Users {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long Id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String fname;
     private String lname;
     private String Mail;
-    private int Phone;
-    private String Access;
+    private int phone;
+    private String access;
 
 
 
