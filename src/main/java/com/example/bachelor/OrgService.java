@@ -31,4 +31,13 @@ public class OrgService {
     }
 
 
+    public boolean deleteOrganization(Long orgnumber) {
+        if (orgsRepository.existsById(orgnumber)) {
+            orgsRepository.deleteById(orgnumber);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

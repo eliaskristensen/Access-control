@@ -12,6 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+// Måtte endre fordi den kan ikke være samme som på Users
 @RequestMapping("/orgApi/")
 public class OrgController {
 
@@ -44,5 +45,19 @@ public class OrgController {
     public List<Organizations> getOrgs(){
         return orgService.getAllOrganizations();
     }//hei
+
+
+    // Orgnummer som skal slettes må sendes med til apiet
+    // f,eks http://localhost:8080/orgApi/456172839
+    @DeleteMapping("/{orgnumber}")
+    public ResponseEntity<Void> deleteOrganization(@PathVariable Long orgnumber) {
+        boolean isDeleted = orgService.deleteOrganization(orgnumber);
+        if (isDeleted) {
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
 
 }
