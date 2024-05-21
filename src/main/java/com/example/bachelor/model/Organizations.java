@@ -8,9 +8,9 @@ import lombok.Data;
 @Table(name = "Organizations")
 public class Organizations {
     @Id
+    private Long orgnumber;
     private String orgname;
     private String assetid;
-    private String orgnumber;
     }
 
 

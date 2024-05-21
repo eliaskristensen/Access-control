@@ -29,7 +29,7 @@ public class UsersController {
 
     @PutMapping
     public ResponseEntity<Users> updateUser(@RequestBody Users userDetails) {
-        Optional<Users> updatedUser = userService.updateUser(userDetails);
+        Optional<Users> updatedUser = usersService.updateUser(userDetails);
         if (updatedUser.isPresent()) {
             return ResponseEntity.ok(updatedUser.get());
         } else {
@@ -37,13 +37,11 @@ public class UsersController {
         }
     }
 
-    @Autowired
-    private UsersService userService;
 
 
     @GetMapping("getUsers")
     public List<Users> getUser(){
-            return userService.getAllUsers();
+            return usersService.getAllUsers();
         }
 
 }

@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+// Denne er forklart i UserService
+import java.util.Optional;
 
 @Service
 public class OrgService {
@@ -15,4 +17,18 @@ public class OrgService {
     public List<Organizations> getAllOrganizations() {
         return orgsRepository.findAll();
     }
-}//hei
+
+    public Optional<Organizations> updateOrganization(Organizations organizationDetails) {
+        Optional<Organizations> organization = orgsRepository.findById(organizationDetails.getOrgnumber());
+        if (organization.isPresent()) {
+            Organizations existingOrganization = organization.get();
+            existingOrganization.setOrgname(organizationDetails.getOrgname());
+            existingOrganization.setAssetid(organizationDetails.getAssetid());
+            return Optional.of(orgsRepository.save(existingOrganization));
+        } else {
+            return Optional.empty();
+        }
+    }
+
+
+}
