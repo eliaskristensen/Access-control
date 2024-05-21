@@ -19,9 +19,7 @@ public class ResourceStringController {
     public void resourceString(@RequestBody String valg) {
         System.out.println(valg + " println");
         String[] splitTab = valg.split(":");
-
         String oppdelt = splitTab[1].trim().replaceAll("[\"}]", "");
-
         System.out.println(oppdelt);
         //packageMap = ReflectionService.readFintModel(oppdelt);
         resourceMap = ResourceService.readRessursModel(oppdelt);

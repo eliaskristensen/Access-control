@@ -29,7 +29,7 @@ public class PackageStringController {
         //System.out.println(txt);
         //return ResponseEntity.ok(packageMap + "Hallo");
     }
-/*
+
     @GetMapping//("api/test")
     @CrossOrigin(origins = "*")
     public String getResource(){
@@ -37,7 +37,7 @@ public class PackageStringController {
         //return "{\"message\": \"yeehaw\"}";
         return packageMap.toString();
         //return ResourceStringController.packageMap.toString();
-    }*/
+    }
 
 
 }
