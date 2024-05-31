@@ -11,17 +11,12 @@ import java.util.Set;
 @Service
 @Slf4j
 public class ResourceService {
-    public static HashMap<String, Boolean> readRessursModel(String ressurs) {
-        //pakke = "arkiv";
+    public static HashMap<String, Boolean> readRessursModel(String resource) {
         HashMap<String, Boolean> ressursMap = new HashMap<>();
-        Set<Class<? extends FintMainObject>> subTypesOf = new Reflections("no.fint.model." + ressurs).getSubTypesOf(FintMainObject.class);
+        Set<Class<? extends FintMainObject>> subTypesOf = new Reflections("no.fint.model." + resource).getSubTypesOf(FintMainObject.class);
         subTypesOf.forEach(clazz -> {
-            // Tester at vi får tak i informasjonsmodellen
             ressursMap.put(clazz.getSimpleName(), false);
-            System.out.println("SIMPLENAME" + clazz.getSimpleName() + clazz.getSimpleName());
-            System.out.println("Name" + clazz.getName());
         });
-        //List<FintRelation> minListe = FintObject.getAllRelations();
         return ressursMap;
     }
 }

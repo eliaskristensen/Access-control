@@ -9,7 +9,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-// denne er forklart i Userservice-klassen
 import java.util.Optional;
 
 @RestController
@@ -22,7 +21,6 @@ public class UsersController {
     @PostMapping("setUsers")
     public void addUser(@RequestBody Users users){
         repo.save(users);
-        System.out.println(users.toString());
     }
     @Autowired
     private UsersService usersService;
@@ -36,8 +34,6 @@ public class UsersController {
             return ResponseEntity.notFound().build();
         }
     }
-
-
 
     @GetMapping("getUsers")
     public List<Users> getUser(){

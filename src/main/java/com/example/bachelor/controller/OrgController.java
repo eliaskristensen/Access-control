@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-// Måtte endre fordi den kan ikke være samme som på Users
+// Had to change because it cannot be the same as on Users
 @RequestMapping("/orgApi/")
 public class OrgController {
 
@@ -22,7 +22,6 @@ public class OrgController {
     @PostMapping("setOrgs")
     public void addOrganizations(@RequestBody Organizations organizations){
         repo.save(organizations);
-        System.out.println(organizations.toString());
     }
 
 
@@ -47,8 +46,8 @@ public class OrgController {
     }//hei
 
 
-    // Orgnummer som skal slettes må sendes med til apiet
-    // f,eks http://localhost:8080/orgApi/456172839
+    // Orgnumber to be deleted must be sent to the api
+    // e.g. http://localhost:8080/orgApi/456172839
     @DeleteMapping("/{orgnumber}")
     public ResponseEntity<Void> deleteOrganization(@PathVariable Long orgnumber) {
         boolean isDeleted = orgService.deleteOrganization(orgnumber);

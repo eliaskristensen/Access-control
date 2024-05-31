@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-// Denne er et objekt som er enten eller en non-null value
-// Kilde: https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html
+// This is an object that may or may not contain a non-null value
+// Source: https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html
 import java.util.Optional;
 
 @Service
@@ -33,8 +33,4 @@ public class UsersService {
             return Optional.empty();
         }
     }
-
-
-
-
 }

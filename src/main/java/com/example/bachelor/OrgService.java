@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-// Denne er forklart i UserService
 import java.util.Optional;
 
 @Service
@@ -30,7 +29,6 @@ public class OrgService {
         }
     }
 
-
     public boolean deleteOrganization(Long orgnumber) {
         if (orgsRepository.existsById(orgnumber)) {
             orgsRepository.deleteById(orgnumber);
@@ -39,5 +37,4 @@ public class OrgService {
             return false;
         }
     }
-
 }
