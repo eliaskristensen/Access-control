@@ -6,14 +6,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
-import no.fint.model.FintMainObject;
-import no.fint.model.FintObject;
-import org.reflections.Reflections;
-import org.springframework.context.annotation.Bean;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
 
 @Setter
 @Getter
@@ -29,8 +21,6 @@ public class Client {
     private String packageName;
     private String access;
 
-
-
     public Client() {
     }
 
@@ -42,18 +32,5 @@ public class Client {
         this.access = access;
 
     }
-
-    // Prøver å lage en metode som kan hente ressurser.
-    /*mulig må flyttes
-    public void getFintObject(String pakke){
-        HashMap<String, Boolean> testliste = new HashMap<String, Boolean>();
-Set<Class<? extends FintMainObject>> subTypesOf = new Reflections("no.fint.model." + pakke).getSubTypesOf(FintMainObject.class);
-        subTypesOf.forEach(clazz -> {
-            testliste.put(clazz.getSimpleName(), false);
-        });
-
-    }*/
-
-
 }
 

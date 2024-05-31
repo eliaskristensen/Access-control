@@ -14,5 +14,4 @@ public class SecurityConfiguration {
                 .oauth2ResourceServer(ServerHttpSecurity.OAuth2ResourceServerSpec::jwt)
                 .build();
     }
-
 }

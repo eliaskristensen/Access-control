@@ -15,24 +15,18 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequiredArgsConstructor
 public class KafkaPrivilageController {
-
     private final SecurityService securityService;
     private final PrivilageDetailKafkaProducer privilageDetailKafkaProducer;
     @GetMapping
     public ResponseEntity<?> getData(@AuthenticationPrincipal Jwt jwt) {
         String username = (String) jwt.getClaims().get("cn");
-        System.out.println("username:");
-        System.out.println(username);
         if (securityService.hasAccess(username, "elev")) {
             return ResponseEntity.status(403).build();
         }
-
         return ResponseEntity.ok().build();
     }
-
     @PostMapping
     public void send(@RequestBody PrivilageDetail privilageDetail){
         privilageDetailKafkaProducer.sendPrivilageDetail(privilageDetail);
     }
-
 }

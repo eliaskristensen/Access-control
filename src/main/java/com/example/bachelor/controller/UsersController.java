@@ -1,6 +1,5 @@
 package com.example.bachelor.controller;
 
-
 import com.example.bachelor.UsersService;
 import com.example.bachelor.model.Users;
 import com.example.bachelor.repository.UsersRepo;
@@ -21,17 +20,13 @@ public class UsersController {
     @PostMapping("/api/setUsers")
     public void addUser(@RequestBody Users users){
         repo.save(users);
-        System.out.println(users.toString());
     }
-
 
     @Autowired
     private UsersService userService;
-
 
     @GetMapping("/api/getUsers")
     public List<Users> getUser(){
             return userService.getAllUsers();
         }
-
 }

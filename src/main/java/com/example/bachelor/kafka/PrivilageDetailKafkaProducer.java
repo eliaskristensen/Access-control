@@ -1,6 +1,5 @@
 package com.example.bachelor.kafka;
 
-//import com.example.bachelor.PrivilageDetail;
 import no.fintlabs.kafka.entity.EntityProducer;
 import no.fintlabs.kafka.entity.EntityProducerFactory;
 import no.fintlabs.kafka.entity.EntityProducerRecord;
@@ -29,7 +28,7 @@ public class PrivilageDetailKafkaProducer {
                 .domainContext("fint-core")
                 .resource("access.control.privilage.detail")
                 .build();
-        entityTopicService.ensureTopic(entityTopicName, 86400000); // et døgn
+        entityTopicService.ensureTopic(entityTopicName, 86400000); // 24 hours
     }
 
     public void sendPrivilageDetail(PrivilageDetail privilageDetail) {
@@ -40,7 +39,5 @@ public class PrivilageDetailKafkaProducer {
                         .value(privilageDetail)
                         .build()
         );
-        System.out.println("sendPrivilageDetail" + privilageDetail);
     }
-
 }

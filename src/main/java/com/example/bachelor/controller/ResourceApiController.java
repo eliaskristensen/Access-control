@@ -9,10 +9,7 @@ public class ResourceApiController {
     @GetMapping("api/getResources")
     @CrossOrigin(origins = "*")
     public String getResources(){
-        System.out.println("Nå kjører getResource");
         String tab = ResourceStringController.resourceMap.toString();
-        System.out.println("Ressurser - " + ResourceStringController.resourceMap.toString());
         return "{\"message\": \"" + tab + "\"}";
-        //return ResourceStringController.packageMap.toString();
     }
 }
