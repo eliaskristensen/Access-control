@@ -11,10 +11,10 @@ import java.util.HashMap;
 public class PackageStringController {
     static HashMap<String, Boolean> packageMap;
     @PostMapping("api/packageString")
-    public void resourceString(@RequestBody String valg) {
-        String[] splitTab = valg.split(":");
-        String oppdelt = splitTab[1].trim().replaceAll("[\"}]", "");
-        packageMap = ReflectionService.readFintModel(oppdelt);
+    public void resourceString(@RequestBody String choice) {
+        String[] splitTab = choice.split(":");
+        String split = splitTab[1].trim().replaceAll("[\"}]", "");
+        packageMap = ReflectionService.readFintModel(split);
     }
 
     @GetMapping//("api/test")
